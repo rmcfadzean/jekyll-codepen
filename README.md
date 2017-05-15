@@ -7,54 +7,58 @@
 # Table of Contents
 
 - [Features](#features)
-- [Screencasts](#screencasts)
 - [Requirements](#requirements)
 - [Setup](#setup)
 - [Usage](#usage)
-- [Tests](#tests)
 - [Versioning](#versioning)
 - [Code of Conduct](#code-of-conduct)
 - [Contributions](#contributions)
 - [License](#license)
-- [History](#history)
-- [Credits](#credits)
 
 <!-- Tocer[finish]: Auto-generated, don't remove. -->
 
 # Features
 
-# Screencasts
+Easily embeds codepens into your Jekyll projects.
 
 # Requirements
 
-0. [Ruby 2.4.1](https://www.ruby-lang.org)
+* [Ruby 2.x.x](https://www.ruby-lang.org)
+* Jekyll
 
 # Setup
 
-For a secure install, type the following (recommended):
-
-    gem cert --add <(curl --location --silent /gem-public.pem)
-    gem install jekyll-codepen --trust-policy MediumSecurity
-
-NOTE: A HighSecurity trust policy would be best but MediumSecurity enables signed gem verification
-while allowing the installation of unsigned dependencies since they are beyond the scope of this
-gem.
-
-For an insecure install, type the following (not recommended):
-
-    gem install jekyll-codepen
-
 Add the following to your Gemfile:
 
-    gem "jekyll-codepen"
+```ruby
+gem "jekyll-codepen"
+```
+
+(Optionally) Add the following to `config.yml`
+
+```yaml
+gems:
+  - jekyll-codepen
+
+codepen:
+  theme: 11473
+  height: 300
+  preview: false
+  default_tab: result
+```
+
 
 # Usage
 
-# Tests
+```
+{% codepen https://codepen.io/blindingstars/pen/wBexpr %}
+```
 
-To test, run:
+or with any of the config options from above
 
-    bundle exec rake
+```
+{% codepen https://codepen.io/blindingstars/pen/wBexpr height=800 preview=true %}
+```
 
 # Versioning
 
@@ -75,15 +79,5 @@ Read [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 # License
 
-Copyright (c) 2017 []().
+Copyright (c) 2017 [Rob McFadzean](https://github.com/rmcfadzean).
 Read [LICENSE](LICENSE.md) for details.
-
-# History
-
-Read [CHANGES](CHANGES.md) for details.
-Built with [Gemsmith](https://github.com/bkuhlmann/gemsmith).
-
-# Credits
-
-Developed by [Rob McFadzean]() at
-[]().

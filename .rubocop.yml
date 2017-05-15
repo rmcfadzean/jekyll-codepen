@@ -1,2 +1,18 @@
-inherit_from:
-  - https://raw.githubusercontent.com/bkuhlmann/code_quality/v1.0.0/configurations/rubocop/ruby.yml
+AllCops:
+  TargetRubyVersion: 2.4
+  DisplayCopNames: true
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Exclude:
+    - "**/*_spec.rb"
+
+Metrics/BlockLength:
+  Exclude:
+    - "**/*_spec.rb"
+
+Metrics/LineLength:
+  Exclude:
+    - "*.gemspec"
