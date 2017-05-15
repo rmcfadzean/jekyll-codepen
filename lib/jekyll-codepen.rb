@@ -48,12 +48,13 @@ module Jekyll
       class_name = attrs['class']
       attrs.delete('class')
 
-      <<-HTML
-        <p #{attr_map(attrs)} data-user="#{@user}" data-slug-hash="#{@slug}" class="#{class_name}">
-          See the <a href="#{@url}">pen</a> on <a href="//codepen.io">CodePen</a>.
-        </p>
-        <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-      HTML
+      tag = "<p #{attr_map(attrs)} data-user=\"#{@user}\" data-slug-hash=\"#{@slug}\" class=\"#{class_name}\">" +
+            "See the <a href=\"#{@url}\">pen</a> on <a href=\"//codepen.io\">CodePen</a>." +
+            "</p>"
+
+      script = "<script async src=\"https://production-assets.codepen.io/assets/embed/ei.js\"></script>"
+
+      tag + script
     end
   end
 end
