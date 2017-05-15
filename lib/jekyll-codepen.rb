@@ -38,7 +38,7 @@ module Jekyll
     end
 
     def render(context)
-      config = context.registers[:site].config['codepen']
+      config = context.registers[:site].config['codepen'] || {}
       attrs = @defaults.merge(config)
 
       args = parse_args(@args)
